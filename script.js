@@ -61,3 +61,10 @@ buttonSubmit.addEventListener("click", function (e) {
   buttonSubmit.style.transform = "";
   buttonSubmit.style.opacity = "0";
 });
+
+let postIt = document.querySelectorAll(".postit");
+postIt.forEach(function (e) {
+  e.addEventListener("click", function () {
+    e.style.transform = "rotate(0deg) scale(1.5)";
+  });
+});
