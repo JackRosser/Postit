@@ -25,17 +25,156 @@ main {
   max-width: 1400px;
   gap: 1rem;
   margin-block: 2rem;
+  flex-wrap: wrap;
+  animation: appear 1s;
 }
 
 .postit {
   font-family: "Indie Flower";
   font-size: 2rem;
-  background: linear-gradient(to top, #9e9e80 0%, #c6c7a0 20%, #fafbc9 80%);
+  background: linear-gradient(to top, #756767 0%, #a76f6f 20%, #ff7f7f 80%);
   padding: 5.5rem 5rem;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  animation: postitAppear 500ms;
 }
 
 .postit h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+.postit:hover {
+  transform: scale(1.05);
+  transition: transform 300ms;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes postitAppear {
+  from {
+    transform: scale(1.3);
+  }
+}
+
+/* nav */
+
+.button_alone {
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: border-radius 300ms;
+  font-size: 1.5rem;
+}
+
+.button_clicked {
+  text-align: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  margin: 1rem 0 0 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  transition: border-radius 300ms;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  border-radius: 0;
+}
+
+.button_alone:hover {
+  border-radius: initial;
+  background-color: black;
+  color: white;
+}
+
+.button_alone:active {
+  background-color: gray;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .button_alone {
+    text-align: center;
+    border-radius: 50%;
+    padding: 1.5rem;
+    cursor: pointer;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    margin: 1rem 0 0 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: border-radius 300ms;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  textarea {
+    position: fixed;
+    margin: 1rem 0 0 1rem;
+    z-index: 5;
+    height: 50px;
+    left: 1rem;
+    top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 150px;
+    z-index: 2;
+    transition-property: transform, opacity, width;
+    transition-duration: 500ms;
+    opacity: 0;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+  .ok_button {
+    position: fixed;
+    z-index: 2;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1rem 1.85rem;
+    top: 40px;
+    left: 1rem;
+    /* transform: translateY(75px); */
+    transition-property: transform, opacity;
+    transition-duration: 500ms;
+    opacity: 0;
+  }
+
+  .ok_button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .ok_button:active {
+    background-color: white;
+    color: black;
+  }
 }
