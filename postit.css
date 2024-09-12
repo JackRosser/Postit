@@ -22,7 +22,6 @@ main {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  max-width: 1400px;
   gap: 1rem;
   margin-block: 2rem;
   flex-wrap: wrap;
@@ -32,7 +31,7 @@ main {
 .postit {
   font-family: "Indie Flower";
   font-size: 2rem;
-  background: linear-gradient(to top, #756767 0%, #a76f6f 20%, #ff7f7f 80%);
+  /* background: linear-gradient(to top, #756767 0%, #a76f6f 20%, #ff7f7f 80%); */
   padding: 5.5rem 5rem;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
   cursor: pointer;
